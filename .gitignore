@@ -1,3 +1,9 @@
+# dbt
 target/
 dbt_packages/
 logs/
+
+# Astro
+.env
+airflow_settings.yaml
+astro
