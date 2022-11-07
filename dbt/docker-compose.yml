@@ -7,9 +7,6 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-demo_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-demo_password}
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:

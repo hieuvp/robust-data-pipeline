@@ -1,5 +1,3 @@
-CREATE USER demo_user WITH PASSWORD 'demo_password';
-
 CREATE TABLE taxi_zone_lookup
 (
     locationid   INTEGER NOT NULL,
