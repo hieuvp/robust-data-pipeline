@@ -1,3 +1,5 @@
+venv/
+
 # dbt
 target/
 dbt_packages/
