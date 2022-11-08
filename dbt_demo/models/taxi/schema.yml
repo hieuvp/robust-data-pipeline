@@ -5,6 +5,9 @@ models:
     description: "Combines taxi rides with the borough names for pickup and dropoff locations."
     columns:
       - name: vendor_id
+        description: A code for the provider of the record.
+        tests:
+          - not_null
       - name: pickup_datetime
       - name: dropoff_datetime
       - name: pickup_borough
