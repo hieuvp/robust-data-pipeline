@@ -117,7 +117,7 @@ data_docs_sites:
       class_name: DefaultSiteIndexBuilder
 
 anonymous_usage_statistics:
-  data_context_id: e7435d15-44bd-4797-974d-2765f10b6c94
+  data_context_id: ee42db00-1453-4622-87bb-4787e1d7480a
   enabled: true
 notebooks:
 include_rendered_content:
