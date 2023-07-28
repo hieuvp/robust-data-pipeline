@@ -1,7 +1,7 @@
-from airflow import DAG
-from airflow.operators.dummy import DummyOperator
-
 from datetime import datetime
+
+from airflow import DAG
+from airflow.operators.bash import BashOperator
 
 # Default settings applied to all tasks
 default_args = {
@@ -15,10 +15,19 @@ default_args = {
 }
 
 with DAG(
-    dag_id='dag_stack',
-    description='An example Airflow DAG running dbt and Great Expectations tasks',
-    schedule_interval=None,
-    default_args=default_args
-    ) as dag:
+        dag_id='dag_stack',
+        description='An example Airflow DAG running dbt and Great Expectations tasks',
+        schedule_interval=None,
+        default_args=default_args
+) as dag:
+    validate_load = BashOperator(
+        task_id='validate_load',
+        bash_command='great_expectations --config /root/dag_stack/great_expectations checkpoint run my_checkpoint_01'
+    )
 
-    t0 = DummyOperator(task_id='dummy_task')
+    dbt_run = BashOperator(
+        task_id='dbt_run',
+        bash_command='dbt run --project-dir /root/dag_stack/dbt'
+    )
+
+    validate_load >> dbt_run
