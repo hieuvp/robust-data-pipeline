@@ -250,6 +250,7 @@ services:
 
   airflow-cli:
     <<: *airflow-common
+    depends_on: []
     profiles:
       - debug
     environment:
