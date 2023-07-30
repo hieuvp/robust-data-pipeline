@@ -30,7 +30,7 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['1', '2', '4']
+              values: ["1", "2", "4"]
       - name: pickup_datetime
         tests:
           - not_null

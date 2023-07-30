@@ -18,7 +18,7 @@
 instance_id: b8efd71c-f18e-4e03-b7ed-33bad9ea058b
 my_datasource:
   host: localhost
-  port: '5432'
+  port: "5432"
   username: postgres
   password: astroworld!
   database: postgres
