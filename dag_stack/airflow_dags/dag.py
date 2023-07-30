@@ -22,11 +22,11 @@ with DAG(
 ) as dag:
     validate_load = BashOperator(
         task_id="validate_load",
-        bash_command="great_expectations --config /root/dag_stack/great_expectations checkpoint run my_checkpoint_01",
+        bash_command="great_expectations --config /opt/airflow/dags/great_expectations checkpoint run my_checkpoint_01",
     )
 
     dbt_run = BashOperator(
-        task_id="dbt_run", bash_command="dbt run --project-dir /root/dag_stack/dbt"
+        task_id="dbt_run", bash_command="dbt run --project-dir /opt/airflow/dags/dbt"
     )
 
     validate_load >> dbt_run

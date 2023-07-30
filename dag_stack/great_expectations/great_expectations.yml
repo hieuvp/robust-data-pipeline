@@ -28,10 +28,10 @@ datasources:
     module_name: great_expectations.datasource
     execution_engine:
       credentials:
-        host: localhost
+        host: postgres
         port: "5432"
-        username: demo_user
-        password: demo_password
+        username: airflow
+        password: airflow
         database: postgres
         drivername: postgresql
       class_name: SqlAlchemyExecutionEngine
