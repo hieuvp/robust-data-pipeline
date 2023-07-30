@@ -16,7 +16,7 @@ default_args = {
 
 with DAG(
     dag_id="airflow_demo_dag",
-    description="An example Airflow DAG",
+    description="An example of Airflow DAG",
     schedule_interval=None,
     default_args=default_args,
 ) as dag:
