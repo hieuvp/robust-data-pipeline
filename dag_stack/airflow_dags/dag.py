@@ -26,7 +26,8 @@ with DAG(
     )
 
     dbt_run = BashOperator(
-        task_id="dbt_run", bash_command="dbt run --project-dir /opt/airflow/dags/dbt"
+        task_id="dbt_run",
+        bash_command="dbt run --project-dir /opt/airflow/dags/dbt",
     )
 
     validate_load >> dbt_run
